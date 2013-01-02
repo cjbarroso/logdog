@@ -42,7 +42,8 @@ function:
   function and automate the log entering
 
 - editdog: Call this script manually in order to enter a new log for
-  the current date/time 
+  the current date/time. If there is an open editor for a given day,
+  this script will not open another instance. 
 
 - transformdog (pending): Convert the LogDog log files to several formats
 
