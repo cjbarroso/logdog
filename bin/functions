@@ -9,8 +9,12 @@ LOGDOGDIR=~/.logdog
 # a strftime for the date command
 DATEFORMAT=%Y%m%d
 LOGFILENAME=$(date +$DATEFORMAT)
-# vi | vim | gvim or similar
-MYEDIT="gedit :"
+# Only gvim for now, planned ninja-ide
+MYEDIT="gvim"
+# Where we log errors / events, etc
+LOGLOGFILE=$LOGDOGDIR/logdog.log
+
+############ Do NOT edit below this line ############################
 
 if [ ! -d $LOGDOGDIR ]; then
   create_datadir
@@ -20,6 +24,10 @@ function get_logfile {
  # gets a logfile for a given date
  # If omitted, return the logfile for TODAY
  echo $LOGDOGDIR/daily/$LOGFILENAME
+}
+
+function get_swapfile {
+ echo $LOGDOGDIR/daily/.$LOGFILENAME.swp
 }
 
 function create_datadir {

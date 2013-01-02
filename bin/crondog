@@ -5,3 +5,6 @@
 # Created on 20130101
 # Author: Carlos Barroso <cjbarroso@gmail.com>
 
+MAINDIR=$(dirname $0)
+source $MAINDIR/functions
+$MAINDIR/editdog
