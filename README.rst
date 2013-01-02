@@ -24,6 +24,14 @@ Installation
 Copy the files in the "bin" folder to a location in your disk, then
 add a line in your crontab to call the `crondog` script.
 
+Optionally, you can add this (or equivalent) lines to your .vimrc to 
+access the two most common operations
+
+map <F2> <Esc>:wq<cr>
+map! <F2> <Esc>:wq<cr>
+map <F4> <Esc>:r! date +\%Y\%m\%d\%H\%M\%S<cr>
+map! <F4> <Esc>:r! date +\%Y\%m\%d\%H\%M\%S<cr>
+
 How it works
 =============
 
