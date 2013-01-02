@@ -18,6 +18,12 @@ Drucker Analysis Tool. For more information about the Drucker Analysis
 and it uses in the everday life of the modern knowledge worker, please
 refer to [1].
 
+Installation
+=============
+
+Copy the files in the "bin" folder to a location in your disk, then
+add a line in your crontab to call the `crondog` script.
+
 How it works
 =============
 
