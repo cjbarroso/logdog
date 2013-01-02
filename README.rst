@@ -30,12 +30,9 @@ function:
 - editdog: Call this script manually in order to enter a new log for
   the current date/time 
 
-- transformdog: Convert the LogDog log files to several formats
+- transformdog (pending): Convert the LogDog log files to several formats
 
-- POSTdog: Post the logs to some time-logging services
-
-- correctdog: Check the structure of a log file, report inconsistencies
-
+- POSTdog (pending): Post the logs to some time-logging services
 
 Log files
 ==========
@@ -82,12 +79,12 @@ crondog
 This script is called from the user's crontab every a user-defined
 number of minutes. By default calls `editdog` with default params.
 
+Call `crondog` with the DISPLAY variable setted to something like :0
+or you will not be able to view the editor screen.
+
+
 editdog
 --------
 It will open the log file for today in your favourite
 text editor, after appending it with the current timestamp.
-
-
-POSTdog
---------
 
