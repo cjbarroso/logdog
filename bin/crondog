@@ -1,0 +1,7 @@
+#!/bin/bash
+# crondog
+# Calls the relevant script to enter log info
+# Call this file from the user's crontab
+# Created on 20130101
+# Author: Carlos Barroso <cjbarroso@gmail.com>
+

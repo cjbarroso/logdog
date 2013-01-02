@@ -1,0 +1,36 @@
+#!/bin/bash
+# functions
+# Common functions and definitions for LogDog
+# Created on 20130101
+# Author: Carlos Barroso <cjbarroso@gmail.com>
+
+# Do not use trailing slash
+LOGDOGDIR=~/.logdog
+# a strftime for the date command
+DATEFORMAT=%Y%m%d
+LOGFILENAME=$(date +$DATEFORMAT)
+# vi | vim | gvim or similar
+MYEDIT="gedit :"
+
+if [ ! -d $LOGDOGDIR ]; then
+  create_datadir
+fi
+
+function get_logfile {
+ # gets a logfile for a given date
+ # If omitted, return the logfile for TODAY
+ echo $LOGDOGDIR/daily/$LOGFILENAME
+}
+
+function create_datadir {
+  echo "LogDog data dir not created, create now? (y/n)"
+  read RESP
+  if [ $RESP == "y" ] ; then
+    echo "Creating main LogDog directory in $LOGDOGDIR"
+    echo "Creating daily data storage directory in $LOGDOGDIR/daily"
+    mkdir -p $LOGDOGDIR/daily
+  else
+    echo Cant continue without data directory, exiting
+    exit
+  fi
+}

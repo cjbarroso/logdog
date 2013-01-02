@@ -1,0 +1,14 @@
+#!/bin/bash
+# editdog
+# Opens a file for today's time logs
+# Appends the current timestamp to the end of file
+# Created on 20130101
+# Author: Carlos Barroso <cjbarroso@gmail.com>
+# REQUIRES variable $EDITOR defined in the environment
+
+source functions
+
+# Append the current timestamp in the log file
+echo $(date) >> $(get_logfile)
+# Opens the logfile in the timestamp line
+$MYEDIT + $(get_logfile)
