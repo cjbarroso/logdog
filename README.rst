@@ -97,6 +97,9 @@ number of minutes. By default calls `editdog` with default params.
 Call `crondog` with the DISPLAY variable setted to something like :0
 or you will not be able to view the editor screen.
 
+Example:
+\*/15 * * * * DISPLAY=:0 ~/proyectos/logdog/bin/crondog 2>~/logdog.log
+
 
 editdog
 --------
