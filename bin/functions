@@ -5,7 +5,7 @@
 # Author: Carlos Barroso <cjbarroso@gmail.com>
 
 # Do not use trailing slash
-LOGDOGDIR=~/.logdog
+LOGDOGDIR=~/Dropbox/.logdog
 # a strftime for the date command
 DATEFORMAT=%Y%m%d
 LOGFILENAME=$(date +$DATEFORMAT)
