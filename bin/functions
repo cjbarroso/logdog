@@ -16,6 +16,19 @@ LOGLOGFILE=$LOGDOGDIR/logdog.log
 
 ############ Do NOT edit below this line ############################
 
+function create_datadir {
+  echo "LogDog data dir not created, create now? (y/n)"
+  read RESP
+  if [ $RESP == "y" ] ; then
+    echo "Creating main LogDog directory in $LOGDOGDIR"
+    echo "Creating daily data storage directory in $LOGDOGDIR/daily"
+    mkdir -p $LOGDOGDIR/daily
+  else
+    echo Cant continue without data directory, exiting
+    exit
+  fi
+}
+
 if [ ! -d $LOGDOGDIR ]; then
   create_datadir
 fi
@@ -30,15 +43,3 @@ function get_swapfile {
  echo $LOGDOGDIR/daily/.$LOGFILENAME.swp
 }
 
-function create_datadir {
-  echo "LogDog data dir not created, create now? (y/n)"
-  read RESP
-  if [ $RESP == "y" ] ; then
-    echo "Creating main LogDog directory in $LOGDOGDIR"
-    echo "Creating daily data storage directory in $LOGDOGDIR/daily"
-    mkdir -p $LOGDOGDIR/daily
-  else
-    echo Cant continue without data directory, exiting
-    exit
-  fi
-}
