@@ -18,4 +18,4 @@ fi
 echo $(date) >> $(get_logfile)
 
 # Opens the logfile in the timestamp line, redirect stderr to logfile
-$MYEDIT + $(get_logfile) 2>>$LOGLOGFILE
+$MYEDIT + "+set swapfile" $(get_logfile) 2>>$LOGLOGFILE
