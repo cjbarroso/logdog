@@ -15,7 +15,7 @@ if [ -e $(get_swapfile) ] ; then
 fi
 
 # Append the current timestamp in the log file
-echo $(date) >> $(get_logfile)
+echo $(date +%Y%m%d%H%M) >> $(get_logfile)
 
 # Opens the logfile in the timestamp line, redirect stderr to logfile
 $MYEDIT + "+set swapfile" $(get_logfile) 2>>$LOGLOGFILE
